@@ -1,0 +1,13 @@
+collections:
+#  - name: ansible.controller
+#  - name: ansible.eda
+#  - name: ansible.hub
+#  - name: ansible.platform
+  - name: amazon.aws
+  - name: awx.awx
+  - name: ansible.utils
+  - name: infra.aap_configuration
+  - name: ansible.posix
+  - name: community.general
+  - name: fedora.linux_system_roles
+  - name: infra.osbuild
