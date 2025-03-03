@@ -37,9 +37,17 @@ ansible-builder build --tag quay.io/automationiberia/osbuildee:1.0
 ```
 
 ### Log in to your container registry and push the image
+
 ```bash
 podman login quay.local --username silvinux --tls-verify=false
 podman push quay.io/automationiberia/osbuildee:1.0 --tls-verify=false
 ```
+
+### Copy to disconnected environment
+
+```bash
+podman save -o osbuildee-1.0.tar quay.io/automationiberia/osbuildee:1.1
+```
+
 
 
