@@ -33,21 +33,26 @@ podman login registry.redhat.io --username <your_username>
 ### Build the execution environment container
 
 ```bash
-ansible-builder build --tag quay.io/automationiberia/osbuildee:1.0
+ansible-builder build --tag quay.io/automationiberia/osbuildee:1.1
 ```
 
 ### Log in to your container registry and push the image
 
 ```bash
 podman login quay.local --username silvinux --tls-verify=false
-podman push quay.io/automationiberia/osbuildee:1.0 --tls-verify=false
+podman push quay.io/automationiberia/osbuildee:1.1 --tls-verify=false
 ```
 
 ### Copy to disconnected environment
 
 ```bash
 podman save -o osbuildee-1.0.tar quay.io/automationiberia/osbuildee:1.1
+scp osbuildee-1.1.tar user@disconnected-server:/path/to/destination
 ```
 
+###  Load the Image on the Disconnected Server
+```bash
+podman load -i /path/to/osbuildee-1.1.tar
+```
 
 
